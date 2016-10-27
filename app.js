@@ -22,7 +22,7 @@ app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
+// app.use(methodOverride('_method'));
 
 app.use(logger('dev'));
 app.listen(port, () => console.log('Server is listening on port', 3000));

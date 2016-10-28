@@ -13,6 +13,8 @@ const visual_recognition = watson.visual_recognition({
   version_date: '2016-05-20'
 });
 
+
+
 const pictureThis = (req, res, next) => {
     const params = {
       url: req.query.url

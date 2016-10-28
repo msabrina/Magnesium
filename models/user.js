@@ -21,7 +21,7 @@ function selectedImages(req, res, next) {
 }
 
 
-function saveFavoriteAlbum(req, res, next) {
+function saveSelected(req, res, next) {
   const insertObj = {
     ownerId: req.session.userId,
 

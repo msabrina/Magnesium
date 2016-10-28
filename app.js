@@ -5,7 +5,8 @@ const fetch = require('node-fetch');
 const path = require('path');
 // const bodyParser = require('body-parser');
 // const methodOverride = require('method-override');
-const { pictureThis } = require('./services/watson');
+const { pictureThis } = require('./services/recognition');
+const homeRoute = require('./router/watson');
 
 // const favorites = require('./models/favorites');
 // const { saveFavoriteAlbum } = require('./models/favorites');
@@ -27,6 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.listen(port, () => console.log('Server is listening on port', 3000));
 
+
+app.use('/', homeRoute);
 // routes to routes js files
 // app.get('/', getFavoriteAlbum, (req, res) => {
 //   res.render('index', {
@@ -51,4 +54,4 @@ app.listen(port, () => console.log('Server is listening on port', 3000));
 //   res.redirect('/');
 // });
 
-//
+

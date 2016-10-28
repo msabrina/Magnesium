@@ -13,10 +13,15 @@
 
 <body>
   <div id="container">
-      <img src="<%= image.urls.regular%>" alt="background image">
+      <img class="image" src="<%= image.urls.regular%>" alt="background image">
     <form method='get' action='analyze'>
       <input type='hidden' name='url' value="<%= image.urls.regular%>"  id='this-thing'>
       <input type="submit" value="Select">
+  </form>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="title">
+    <input type="file" name="upl">
+    <input type="submit" value="Submit">
   </form>
   </div>
 

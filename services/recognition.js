@@ -13,7 +13,7 @@ const visual_recognition = watson.visual_recognition({
   version_date: '2016-05-20'
 });
 
-
+const fs = require('fs');
 
 const pictureThis = (req, res, next) => {
     const params = {
@@ -21,14 +21,32 @@ const pictureThis = (req, res, next) => {
     };
 // acquired from IBM Watson.
 
-  visual_recognition.classify(params, function(err, watsonRes) {
+  visual_recognition.classify(params, (err, watsonRes) => {
     res.watsonRes = watsonRes;
     next();
   });
+}
+
+
+const imageThis = (req, res, next) => {
+  const params = {
+  images_file: fs.createReadStream('../uploads/test.jpg')
 };
 
+visual_recognition.detectFaces(params,
+  function(err, response) {
+    if (err)
+      console.log(err);
+    else
+      console.log(JSON.stringify(response, null, 2));
+  });
+}
 
-module.exports = { pictureThis };
+
+module.exports = {
+  pictureThis,
+  imageThis,
+};
 
 
 // then(r => r.json()) r is our response object xhr object

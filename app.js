@@ -3,7 +3,10 @@ const express = require('express');
 const logger = require('morgan');
 const fetch = require('node-fetch');
 const path = require('path');
-// const bodyParser = require('body-parser');
+
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
+const bodyParser = require('body-parser');
 // const methodOverride = require('method-override');
 const { pictureThis } = require('./services/recognition');
 const homeRoute = require('./router/watson');
@@ -22,7 +25,8 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static( 'uploads'));
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(methodOverride('_method'));
 
 app.use(logger('dev'));
@@ -38,6 +42,10 @@ app.use('/', homeRoute);
 //   });
 // });
 
+// app.post('/upload', upload.single('test'), function (req, res, next) {
+//   // req.files is array of `photos` files
+//   // req.body will contain the text fields, if there were any
+// });
 // app.post('/search', findMusicAlbums, getFavoriteAlbum, (req, res) => {
 //   console.log(res.results);
 //   res.render('index', {
@@ -53,5 +61,3 @@ app.use('/', homeRoute);
 // app.delete('/favorites/:id', deleteAlbum, (req, res) => {
 //   res.redirect('/');
 // });
-
-

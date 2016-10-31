@@ -11,6 +11,8 @@
 
 <body>
 <h1> Watson results</h1>
+
+<h1> Found </h1>
   <% if (watsonResults) { %>
   <% watsonResults.images[0].classifiers[0].classes.forEach((el) => { %>
     <p><%= el.class %></p>

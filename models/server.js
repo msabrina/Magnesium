@@ -1,5 +1,7 @@
 const { MongoClient, ObjectID } = require('mongodb');
 
+const connectionURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/images';
+
 
 function saveSelected(req, res, next) {
   const insertObj = {

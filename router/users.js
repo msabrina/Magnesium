@@ -4,6 +4,8 @@ const { authenticate }   = require('../lib/auth');
 const { pictureThis } = require('../services/recognition');
 const { getImage } = require('../services/images');
 const { imageThis } = require('../services/recognition');
+const { saveSelected } = require('../models/server');
+
 const usersRouter = express.Router();
 
 /**
@@ -21,18 +23,45 @@ usersRouter.post('/', createUser, (req, res) => {
  */
 usersRouter.get('/profile', authenticate, (req, res) => {
   res.render('users/profile', { user: res.user });
+  // console.log(req.session)
+  // res.json(req.session)
 });
 
-usersRouter.get('/profile', getImage, (req, res) => {
-    console.log('show me the prob!');
-  res.json('/users/profile', { image: res.image });
-});
+// usersRouter.get('/profile', getImage, (req, res) => {
+//     console.log('show me the prob!');
+//   res.json('/users/profile', { image: res.image });
+// });
 
-usersRouter.get('/profile', getImage, pictureThis, (req, res) => {
-  res.render('/users/profile', {
+usersRouter.get('/images', authenticate, getImage, (req, res) => {
+  res.render('users/images', {
+    user: res.user,
     image: res.image,
-    watsonResults: res.watsonRes,
   });
 });
+
+usersRouter.get('/analyze', pictureThis, (req, res) => {
+  res.render('users/watson', {
+    watsonResults: res.watsonRes,
+    imageUrl: req.query.url,
+  });
+  // res.json(res.watsonRes);
+});
+
+
+usersRouter.post('/save', saveSelected, (req, res) => {
+  res.redirect('/users/images');
+})
+
+
+
+// usersRouter.get('/profile', authenticate, getImage, pictureThis, (req, res) => {
+//   console.log('here');
+//   res.render('users/profile', {
+//     user: res.user,
+//     image: res.image,
+//     watsonResults: res.watsonRes,
+//   });
+//   // res.json(res.image);
+// });
 
 module.exports = usersRouter;

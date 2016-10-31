@@ -1,8 +1,36 @@
 body {
-  background-color: #D5D5D5;
+  background: url('/img/bgimg.jpg') no-repeat center center fixed;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  position: relative;
+  top: 64px;
+  color: #fff;
 }
-h1, h2 {
+
+/*h1, h2 {
   margin-left: 30px;
+}*/
+
+p {
+  color: red;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+nav a {
+  align-items: center;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #fff;
+  margin: 16px;
+}
+
+.flex {
+display: flex;
+justify-content: center;
 }
 
 .results {
@@ -10,13 +38,8 @@ h1, h2 {
   flex-flow: column;
 }
 
-.image {
-  width: 200px;
-  height: 200px;
-}
-
 .upload {
-  border: 3px solid black;
+
 }
 
 .delete {

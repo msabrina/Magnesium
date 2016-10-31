@@ -8,7 +8,7 @@ function getImage(req, res, next) {
  .then(r => r.json())
  .then((result) => {
    res.image = result;
-   // console.log(result);
+   console.log(result);
    next();
  })
  .catch(err => {

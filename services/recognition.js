@@ -17,15 +17,16 @@ const fs = require('fs');
 
 const pictureThis = (req, res, next) => {
     const params = {
-      url: req.query.url
+      url: req.query.url,
     };
 // acquired from IBM Watson.
 
   visual_recognition.classify(params, (err, watsonRes) => {
     res.watsonRes = watsonRes;
+    console.log(1);
     next();
   });
-}
+};
 
 
 const imageThis = (req, res, next) => {

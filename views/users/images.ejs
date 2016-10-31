@@ -11,12 +11,31 @@
   <script src="/script.js" type="text/javascript" async defer></script>
 </head>
 <body>
-<h1>Welcome <%= user.username %>!</h1>
 <form class="delete" action="/auth?_method=DELETE" method="post">
     <input type="submit" value="Logout">
 </form>
 
+<h2>Begin Browsing</h2>
+
+
+<div class="random">
+  <img class="" src="<%= image.urls.regular %>" alt="background image">
+    <form method='get' action='/users/analyze'>
+      <input type='text' name='url' value=""  id='this-thing'>
+      <input type="submit" value="Select">
+    </form>
+</div>
+
+<div class="upload" >
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="title">
+    <input type="file" name="upl">
+    <input type="submit" value="Send!">
+  </form>
+</div>
+
+
+
 <a href="/favorite">Favorites</a>
-<a href="/users/images">get image</a>
   </body>
 </html>

@@ -1,6 +1,6 @@
 body {
-  background: url('/img/bgimg.jpg') no-repeat center center fixed;
-
+  background-color: #062f4f;
+  gradient: circle 50%;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   position: relative;

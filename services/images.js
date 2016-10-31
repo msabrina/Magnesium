@@ -11,8 +11,8 @@ function getImage(req, res, next) {
    // console.log(result);
    next();
  })
- .catch((err) => {
-   res.err = err;
+ .catch(err => {
+   console.log('Error', err);
    next();
  });
 }

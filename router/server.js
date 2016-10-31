@@ -18,18 +18,18 @@ const path = require('path');
 
 
 serverRouter.get('/analyze', getImage, (req, res) => {
-    console.log(res.image)
-  res.render('/users/profile', {
-    image: res.image,
-  });
+    console.log('show me the prob!');
+  res.json('/users/profile', { image: res.image });
 });
 
 serverRouter.get('/', getImage, pictureThis, (req, res) => {
   res.render('/users/profile', {
+    image: res.image,
     watsonResults: res.watsonRes,
   });
 });
 
+module.exports = serverRouter;
 // addToDatabase
 // router.get('/analyze', pictureThis, (req, res) => {
 //   res.render('index', {
@@ -60,7 +60,6 @@ serverRouter.get('/', getImage, pictureThis, (req, res) => {
 //   });
 // });
 
-module.exports = serverRouter;
 
 // // <% image.forEach((image) => { %>
 

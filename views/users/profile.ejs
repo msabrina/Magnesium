@@ -6,6 +6,8 @@
 <title>Magnesium</title>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/main.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="/script.js" type="text/javascript" async defer></script>
 </head>
 <body>
 <h1>Welcome <%= user.username %>!</h1>
@@ -21,6 +23,29 @@
     <input type="file" name="upl">
     <input type="submit" value="Send!">
   </form>
+</div>
+
+<div class="random">
+  <img class="" src="<%= image.urls.regular %>" alt="background image">
+    <form method='get' action='/profile'>
+      <input type='hidden' name='url' value="<%= url %>"  id='this-thing'>
+      <input type="submit" value="Select">
+    </form>
+</div>
+
+<div class="results">
+  <% image.forEach((image)=> { %>
+<div class='searchBox'>
+    <h3>Search By:</h3>
+      <p><%= image.classifiers%></p>
+      <p><%= image.class%></p>
+      <p><%= image.faces%></p>
+      <p><%= image.age%></p>
+      <p><%= image.MALE%></p>
+      <p><%= image.identity%></p>
+      <p><%= image.type_hierarchy%></p>
+</div>
+  <% }) %>
 </div>
 
 <a href="/favorite">Favorites</a>

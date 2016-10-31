@@ -5,6 +5,11 @@ h1, h2 {
   margin-left: 30px;
 }
 
+.results {
+  display: flex;
+  flex-flow: column;
+}
+
 .image {
   width: 200px;
   height: 200px;

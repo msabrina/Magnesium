@@ -15,10 +15,29 @@
   <% watsonResults.images[0].classifiers[0].classes.forEach((el) => { %>
     <p><%= el.class %></p>
     <p><%= el.score %></p>
+    <p><%= el.faces %></p>
+    <p><%= el.age %></p>
+    <p><%= el.gender %></p>
+    <p><%= el.identity %></p>
+    <p><%= el.type_hierarchy %></p>
+
   <% }) %>
   <% } %>
+
   <img class="" src="<%= imageUrl %>">
-<form class="save" action="/favorites"></form>
+<form class="save" action="/users/save" method="POST">
+  <input type="hidden" name="url" value="<%= watsonResults.images[0].resolved_url %>">
   <input type="submit" value="save" placeholder="Save">
+</form>
+
+<% favorites.forEach((fave) => { %>
+  <img src="<%= fave.url %>">
+  <form action="/users/save?_method=DELETE" method="post">
+  <input type="hidden" name="id" value="<%= fave._id %>">
+  <input type="submit" value="Delete">
+</form>
+<% }) %>
+
+
 </body>
 </html>

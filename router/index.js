@@ -1,10 +1,8 @@
 const express = require('express');
 const indexRouter = express.Router();
 
-const multer = require('multer');
-const upload = multer({ dest: '../uploads/'});
-// const { pictureThis } = require('../services/watson');
-// const { getImage } = require('../services/watson');
+
+// const upload = multer({ dest: '../uploads/'});
 
 // This is the route that serves your '/' homepage
 indexRouter.get('/', (req, res) => {

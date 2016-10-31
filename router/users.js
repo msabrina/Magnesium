@@ -1,10 +1,12 @@
-const express      = require('express');
-const { createUser }    = require('../models/user.js');
-const { authenticate }   = require('../lib/auth');
+const express = require('express');
+const { createUser } = require('../models/user.js');
+const { authenticate } = require('../lib/auth');
 const { pictureThis } = require('../services/recognition');
 const { getImage } = require('../services/images');
 const { imageThis } = require('../services/recognition');
 const { saveSelected } = require('../models/server');
+const { deleteSelected } = require('../models/server');
+const { getFavorites } = require('../models/server');
 
 const usersRouter = express.Router();
 
@@ -39,21 +41,22 @@ usersRouter.get('/images', authenticate, getImage, (req, res) => {
   });
 });
 
-usersRouter.get('/analyze', pictureThis, (req, res) => {
+usersRouter.get('/analyze', pictureThis, getFavorites, (req, res) => {
   res.render('users/watson', {
     watsonResults: res.watsonRes,
     imageUrl: req.query.url,
+    favorites: res.favorites,
   });
   // res.json(res.watsonRes);
 });
 
-
 usersRouter.post('/save', saveSelected, (req, res) => {
   res.redirect('/users/images');
-})
+});
 
-
-
+usersRouter.delete('/save', deleteSelected, (req, res) => {
+  res.redirect('/');
+});
 // usersRouter.get('/profile', authenticate, getImage, pictureThis, (req, res) => {
 //   console.log('here');
 //   res.render('users/profile', {

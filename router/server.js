@@ -3,7 +3,7 @@ const { pictureThis } = require('../services/recognition');
 const { getImage } = require('../services/images');
 const { imageThis } = require('../services/recognition');
 
-const multer = require('multer');
+// const multer = require('multer');
 const path = require('path');
 
 // const storage = multer.diskStorage({
@@ -15,8 +15,6 @@ const path = require('path');
 //   }
 // })
 // const upload = multer({ storage: storage });
-
-
 serverRouter.get('/analyze', getImage, (req, res) => {
     console.log('show me the prob!');
   res.json('/users/profile', { image: res.image });
@@ -59,10 +57,6 @@ module.exports = serverRouter;
 //     url: 'uploads/' + req.file.filename,
 //   });
 // });
-
-
-// // <% image.forEach((image) => { %>
-
 
 // // Acquired from codementor.io.
 

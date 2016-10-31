@@ -17,9 +17,12 @@
 
 <h2>Begin Browsing</h2>
 
-
 <div class="random">
   <img class="" src="<%= image.urls.regular %>" alt="background image">
+  <form method='get' action='/users/analyze'>
+      <input type='hidden' name='url' value="<%= image.urls.regular %>"  id='this-thing'>
+      <input type="submit" value="Select">
+  </form>
     <form method='get' action='/users/analyze'>
       <input type='text' name='url' value=""  id='this-thing'>
       <input type="submit" value="Select">

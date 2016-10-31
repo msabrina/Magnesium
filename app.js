@@ -20,7 +20,7 @@ const usersRouter = require('./router/users');
 const serverRouter = require('./router/server');
 
 
-const upload = multer({ dest: 'uploads/' });
+// const upload = multer({ dest: 'uploads/' });
 const { pictureThis } = require('./services/recognition');
 
 // const favorites = require('./models/favorites');

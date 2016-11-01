@@ -13,12 +13,13 @@
 <body>
 <h1>Welcome <%= user.username %>!</h1>
 <h2>Seriously, upload anything you want here.</h2>
-<a href="/users/favorites">Favorites</a>
-<a href="/users/images">get started</a>
+<a class='link' href="/users/favorites">Favorites</a>
+<a class='link' href="/users/images">get started</a>
 <br>
 <br>
 <form class="delete" action="/auth?_method=DELETE" method="post">
-    <input type="submit" value="Logout">
+  <input type="submit" value="Logout">
 </form>
-  </body>
+<footer></footer>
+</body>
 </html>

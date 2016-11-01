@@ -11,9 +11,11 @@
 
 <body>
 <h1> magnesium&copy;</h1>
-<h2> found: </h2>
+<h3> found: </h3>
 
-<div class="flex">
+ <img class="" src="<%= imageUrl %>">
+
+<div class="watson">
   <% if (watsonResults) { %>
   <ul>  <% watsonResults.images[0].classifiers[0].classes.forEach((el) => { %>
     <li><%= el.class %><li>
@@ -22,13 +24,11 @@
     <li><%= el.age %><li>
     <li><%= el.gender %><li>
     <li><%= el.identity %><li>
-    <li<%= el.type_hierarchy %><li>
-
   <% }) %>
   <% } %>
   </ul>
 
-  <img class="" src="<%= imageUrl %>">
+
 <form class="save" action="/users/save" method="POST">
   <input type="hidden" name="url" value="<%= watsonResults.images[0].resolved_url %>">
   <input type="submit" value="save" placeholder="Save">
@@ -41,6 +41,6 @@
   <input type="submit" value="Delete">
 </form>
 <% }) %>
-
+<footer></footer>
 </body>
 </html>

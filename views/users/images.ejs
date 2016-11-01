@@ -12,22 +12,22 @@
 </head>
 <body>
 <h1>magnesium&copy;</h1>
-<h2>get browsing...</h2>
+<h3>get browsing...</h3>
 
-<form class="delete" action="/auth?_method=DELETE" method="post">
-    <input type="submit" value="Logout">
+<form  action="/auth?_method=DELETE" method="post">
+    <input  class="delete" type="submit" value="Logout">
 </form>
-<div class="random">
-  <img class="" src="<%= image.urls.regular %>" alt="background image">
-  <form method='get' action='/users/analyze'>
-      <input type='hidden' name='url' value="<%= image.urls.regular %>"  id='this-thing'>
-      <input type="submit" value="Select">
+<div class='random'>
+  <form class='select' method='get' action='/users/analyze'>
+  <img class='image' src="<%= image.urls.regular %>" alt="background image">
+    <input type='hidden' name='url' value="<%= image.urls.regular %>"  id='this-thing'>
+    <input class="delete" type="submit" value="Select">
   </form>
   <br>
   <br>
   <form method='get' action='/users/analyze'>
     <input type='text' name='url' value=""  id='this-thing'>
-    <input type="submit" value="Select">
+    <input class='delete' type="submit" value="Select">
   </form>
   <br>
   <br>
@@ -40,6 +40,9 @@
     <input type="submit" value="Send!">
   </form>
 </div>
+<br>
+<br>
 <a href="/favorites">Favorites</a>
+<footer></footer>
   </body>
 </html>

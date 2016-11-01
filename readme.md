@@ -1,4 +1,4 @@
-# Magnesium&copy
+# Magnesium
 
 Visual Recognition IBM Watson API
 
@@ -33,3 +33,5 @@ Heroku
 
 References
 
+
+https://grisly-wizard-57873.herokuapp.com/

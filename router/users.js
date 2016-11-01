@@ -50,8 +50,17 @@ usersRouter.get('/analyze', pictureThis, getFavorites, (req, res) => {
   // res.json(res.watsonRes);
 });
 
+usersRouter.get('/favorites', authenticate, getFavorites, (req, res) => {
+  console.log('favorites *****', res.favorites);
+  res.render('users/favorites', {
+    user: res.user,
+    favorites: res.favorites,
+  });
+  // res.json(res.watsonRes);
+});
+
 usersRouter.post('/save', saveSelected, (req, res) => {
-  res.redirect('/users/images');
+  res.redirect('/users/favorites');
 });
 
 usersRouter.delete('/save', deleteSelected, (req, res) => {

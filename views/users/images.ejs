@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Magnesium</title>
+<title>magnesium</title>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -11,12 +11,12 @@
   <script src="/script.js" type="text/javascript" async defer></script>
 </head>
 <body>
+<h1>magnesium&copy;</h1>
+<h2>get browsing...</h2>
+
 <form class="delete" action="/auth?_method=DELETE" method="post">
     <input type="submit" value="Logout">
 </form>
-<h1>Magnesium</h1>
-<h2>Begin Browsing</h2>
-
 <div class="random">
   <img class="" src="<%= image.urls.regular %>" alt="background image">
   <form method='get' action='/users/analyze'>
@@ -25,12 +25,12 @@
   </form>
   <br>
   <br>
-    <form method='get' action='/users/analyze'>
-      <input type='text' name='url' value=""  id='this-thing'>
-      <input type="submit" value="Select">
-    </form>
-    <br>
-    <br>
+  <form method='get' action='/users/analyze'>
+    <input type='text' name='url' value=""  id='this-thing'>
+    <input type="submit" value="Select">
+  </form>
+  <br>
+  <br>
 </div>
 
 <div class="upload" >
@@ -40,9 +40,6 @@
     <input type="submit" value="Send!">
   </form>
 </div>
-
-
-
-<a href="/favorite">Favorites</a>
+<a href="/favorites">Favorites</a>
   </body>
 </html>

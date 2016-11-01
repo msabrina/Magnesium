@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+<h1>magnesium&copy;</h1>
+<h2> favorites: </h2>
+  <p><%#= user.username %></p>
+  <%# console.log(favorites) %>
+  <% for (let i = 0; i < favorites.length; i++) { %>
+    <img src="<%= favorites[i].imageUrl %>"></img>
+  <% } %>
+
+</body>
+</html>

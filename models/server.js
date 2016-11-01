@@ -8,10 +8,11 @@ function getFavorites(req, res, next) {
   // find all favorites for your userId
   getDB().then((db) => {
     db.collection('favorites')
-      .find({ userId: { $eq: req.session.userId } })
+      .find({ ownerId: { $eq: req.session.userId } })
       .toArray((toArrErr, data) => {
         if(toArrErr) return next(toArrErr);
         res.favorites = data;
+        console.log('data **** ', data);
         db.close();
         next();
       });
@@ -43,7 +44,7 @@ function saveSelected(req, res, next) {
     db.collection('favorites')
       .insert(insertObj, (insertErr, result) => {
       if (insertErr) return next(insertErr);
-      res.saved = result;
+      res.favorites = result;
       db.close();
       return next();
       });
@@ -53,7 +54,7 @@ function saveSelected(req, res, next) {
 }
 
 function deleteSelected(req, res, next) {
-  MongoClient.connect(dbConnection, (err, db) => {
+  getDB((err, db) => {
     if (err) return next(err);
     db.collection('favorites')
       .findAndRemove({ _id: ObjectID(req.body.id) }, (removeErr, doc) => {

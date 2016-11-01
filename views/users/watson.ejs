@@ -10,28 +10,30 @@
 </head>
 
 <body>
-<h1> Watson results</h1>
+<h1> magnesium&copy;</h1>
+<h2> found: </h2>
 
-<h1> Found </h1>
+<div class="flex">
   <% if (watsonResults) { %>
-  <% watsonResults.images[0].classifiers[0].classes.forEach((el) => { %>
-    <p><%= el.class %></p>
-    <p><%= el.score %></p>
-    <p><%= el.faces %></p>
-    <p><%= el.age %></p>
-    <p><%= el.gender %></p>
-    <p><%= el.identity %></p>
-    <p><%= el.type_hierarchy %></p>
+  <ul>  <% watsonResults.images[0].classifiers[0].classes.forEach((el) => { %>
+    <li><%= el.class %><li>
+    <li><%= el.score %><li>
+    <li><%= el.faces %><li>
+    <li><%= el.age %><li>
+    <li><%= el.gender %><li>
+    <li><%= el.identity %><li>
+    <li<%= el.type_hierarchy %><li>
 
   <% }) %>
   <% } %>
+  </ul>
 
   <img class="" src="<%= imageUrl %>">
 <form class="save" action="/users/save" method="POST">
   <input type="hidden" name="url" value="<%= watsonResults.images[0].resolved_url %>">
   <input type="submit" value="save" placeholder="Save">
 </form>
-
+</div>
 <% favorites.forEach((fave) => { %>
   <img src="<%= fave.url %>">
   <form action="/users/save?_method=DELETE" method="post">
@@ -39,7 +41,6 @@
   <input type="submit" value="Delete">
 </form>
 <% }) %>
-
 
 </body>
 </html>

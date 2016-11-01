@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Magnesium</title>
+<title>magnesium&copy;</title>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -12,11 +12,13 @@
 </head>
 <body>
 <h1>Welcome <%= user.username %>!</h1>
+<h2>Seriously, upload anything you want here.</h2>
+<a href="/users/favorites">Favorites</a>
+<a href="/users/images">get started</a>
+<br>
+<br>
 <form class="delete" action="/auth?_method=DELETE" method="post">
     <input type="submit" value="Logout">
 </form>
-
-<a href="/favorite">Favorites</a>
-<a href="/users/images">get image</a>
   </body>
 </html>

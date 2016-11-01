@@ -10,14 +10,16 @@
 </head>
 
 <body>
+<div class="container">
 <h1> magnesium&copy;</h1>
 <h3> found: </h3>
 
- <img class="" src="<%= imageUrl %>">
+ <img class="image" src="<%= imageUrl %>">
 
 <div class="watson">
   <% if (watsonResults) { %>
-  <ul>  <% watsonResults.images[0].classifiers[0].classes.forEach((el) => { %>
+  <ul>
+  <% watsonResults.images[0].classifiers[0].classes.forEach((el) => { %>
     <li><%= el.class %><li>
     <li><%= el.score %><li>
     <li><%= el.faces %><li>
@@ -28,19 +30,21 @@
   <% } %>
   </ul>
 
-
-<form class="save" action="/users/save" method="POST">
+<form class='faves' action="/users/save" method="POST">
   <input type="hidden" name="url" value="<%= watsonResults.images[0].resolved_url %>">
   <input type="submit" value="save" placeholder="Save">
 </form>
-</div>
+
 <% favorites.forEach((fave) => { %>
   <img src="<%= fave.url %>">
-  <form action="/users/save?_method=DELETE" method="post">
-  <input type="hidden" name="id" value="<%= fave._id %>">
-  <input type="submit" value="Delete">
-</form>
+  <form class='faves' action="/users/save?_method=DELETE" method="post">
+    <input type="hidden" name="id" value="<%= fave._id %>">
+    <input class='' type="submit" value="Delete">
+  </form>
 <% }) %>
+
+</div>
 <footer></footer>
+</div>
 </body>
 </html>

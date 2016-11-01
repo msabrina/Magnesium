@@ -12,14 +12,15 @@
 <body>
 <h1>magnesium&copy;</h1>
 <h2> favorites: </h2>
-  <p><%#= user.username %></p>
+<div class="container">
   <%# console.log(favorites) %>
   <% for (let i = 0; i < favorites.length; i++) { %>
-    <img src="<%= favorites[i].imageUrl %>"></img>
+    <img class='image' src="<%= favorites[i].imageUrl %>"></img>
   <% } %>
 <form class="delete" action="/auth?_method=DELETE" method="post">
   <input type="submit" value="Delete">
 </form>
+</div>
 <footer></footer>
 </body>
 </html>

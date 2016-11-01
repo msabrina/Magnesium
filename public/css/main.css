@@ -56,16 +56,16 @@ p {
   color: red;
 }
 
-img {
-  width: 300px;
-  height: 300px;
+/*img {
+  width: 600px;
+  height: 500px;
   margin-left: 30px;
-}
-nav a {
+}*/
+ a {
   align-items: center;
   letter-spacing: 3px;
   text-decoration: none;
-  color: #fff;
+  color: #328CC1;
   margin: 16px;
 }
 
@@ -76,13 +76,15 @@ footer {
   background-color: #D9B310;
   font-color: white;
   font-size: 35px;
-  height: 45px;
+  /*height: 45px;*/
   width: 100%;
+  height: 10vh;
 }
 
 h3 {
   font-size: 24px;
   left: 24px;
+  text-align: center;
 }
 
 .random {
@@ -106,26 +108,40 @@ h3 {
 }
 
 .delete {
-  background-color: #062f4f;
-  border: 5px solid black;
-  height: 100px;
+  background-color: #D9B310;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 24px;
-  padding: 0px 20px;
-  float: right;
-  margin-top: 0;
+}
+
+.faves {
+  background-color: #D9B310;
+  border: none;
+  padding: 15px 32px;
+  /*text-align: center;*/
+  text-decoration: none;
+  display: inline;
+  font-size: 24px;
+  margin: 20px 10px;
 }
 
 .image {
   margin-left: 50px;
+  width: 600px;
+  height: 500px;
+  margin-left: 30px;
 }
 
 .watson {
-  display: inline-block;
+  display: inline;
   /*justify-content: center;*/
   /*vertical-align: center;*/
-  flex-flow: column;
+  flex-flow: row;
   list-style: none;
-  margin-top: 50px;
+  margin-top: 60px;
   font-size: 50px
   padding-top: 0px;
 }
@@ -135,8 +151,42 @@ li {
   margin-top: 50px;
   font-size: 50px
   padding-top: 0px;
+  display: inline;
+}
+
+/*.picture {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 80px;
+}*/
+
+ul {
+  margin-top: 45px;
+  padding-bottom: 20px;
 }
 
 .desc {
 
+}
+
+.logout {
+  position: relative;
+  background-color: #062f4f;
+/*  border: 5px solid black;
+*/  height: 100px;
+  font-size: 24px;
+  padding: 0px 20px 0 20px;
+  float: right;
+  margin-top: -60px;
+}
+
+.button {
+}
+
+.container {
+
+  height: 80vh;
+  width: 100vw;
+  overflow: scroll;
 }

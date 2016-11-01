@@ -12,21 +12,22 @@
 </head>
 <body>
 <h1>magnesium&copy;</h1>
-<h3>get browsing...</h3>
-
-<form  action="/auth?_method=DELETE" method="post">
-    <input  class="delete" type="submit" value="Logout">
+<div class='logout'>
+<form class='' action="/auth?_method=DELETE" method="post">
+    <input class='' type="submit" value="Logout">
 </form>
+</div>
+<h3>Select a random photo...</h3>
 <div class='random'>
   <form class='select' method='get' action='/users/analyze'>
   <img class='image' src="<%= image.urls.regular %>" alt="background image">
     <input type='hidden' name='url' value="<%= image.urls.regular %>"  id='this-thing'>
-    <input class="delete" type="submit" value="Select">
+    <input class="delete" id='button' type="submit" value="Select">
   </form>
   <br>
   <br>
   <form method='get' action='/users/analyze'>
-    <input type='text' name='url' value=""  id='this-thing'>
+    or paste your URL : <input type='text' name='url' value=""  id='this-thing'>
     <input class='delete' type="submit" value="Select">
   </form>
   <br>

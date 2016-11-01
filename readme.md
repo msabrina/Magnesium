@@ -31,7 +31,8 @@ Fetch
 EJS
 Heroku
 
-References
-
-
+Deployed site:
 https://grisly-wizard-57873.herokuapp.com/
+
+
+A million thanks to all my classmates that helped me debugg!!

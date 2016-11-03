@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 
 const SALTROUNDS = 10;
 
-const dbConnection = 'mongodb://localhost:27017/images';
+const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/images';
 
 
 function createUser(req, res, next) {

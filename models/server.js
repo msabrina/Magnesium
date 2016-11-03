@@ -1,11 +1,12 @@
 const { MongoClient, ObjectID } = require('mongodb');
 const { getDB } = require('../lib/dbConnect.js');
 
-const connectionURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/images';
+const connectionURL = process.env.MONGODB_URI || 'mongodb://localhost:27017/images';
 
 
 function getFavorites(req, res, next) {
-  // find all favorites for your userId
+  // find all favorites for your userId(this was a bug..
+  // should have been ownerId bc that's how its saved in the db)
   getDB().then((db) => {
     db.collection('favorites')
       .find({ ownerId: { $eq: req.session.userId } })
